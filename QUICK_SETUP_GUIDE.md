@@ -65,7 +65,9 @@ Host ConTrac website at: `https://contra.puneethjoseph.in/` (recommended subdoma
    - You should see a `CNAME` file in the root
    - It should contain: `contra.puneethjoseph.in` (or your chosen domain)
 
-## 🔧 Step 3: Configure DNS Records (Zoho Domain)
+## 🔧 Step 3: Configure DNS Records (Zoho Domain) - DO THIS FIRST!
+
+**⚠️ IMPORTANT:** Add the DNS record in Zoho BEFORE configuring the custom domain in GitHub Pages. This prevents the "DNS record could not be retrieved" error.
 
 Since your domain `puneethjoseph.in` is registered with Zoho, configure DNS in Zoho's domain management.
 
