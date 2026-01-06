@@ -65,37 +65,49 @@ Host ConTrac website at: `https://contra.puneethjoseph.in/` (recommended subdoma
    - You should see a `CNAME` file in the root
    - It should contain: `contra.puneethjoseph.in` (or your chosen domain)
 
-## 🔧 Step 3: Configure DNS Records
+## 🔧 Step 3: Configure DNS Records (Zoho Domain)
 
-Now you need to configure DNS at your domain registrar (where you bought `puneethjoseph.in`).
+Since your domain `puneethjoseph.in` is registered with Zoho, configure DNS in Zoho's domain management.
 
 ### Option A: Subdomain (Recommended - contra.puneethjoseph.in)
 
 **This keeps your main site separate and is easier to set up.**
 
-1. **Log in to your domain registrar:**
-   - Go to where you manage `puneethjoseph.in` (GoDaddy, Namecheap, etc.)
-   - Find DNS management or DNS settings
+**Understanding Subdomains:** See `DOMAIN_EXPLANATION.md` for detailed explanation of how subdomains work.
 
-2. **Add CNAME Record:**
-   - Click "Add Record" or "Create Record"
-   - **Type**: `CNAME`
-   - **Name/Host**: `contra` (just the subdomain part)
-   - **Value/Target**: `YOUR_USERNAME.github.io` (replace with your GitHub username)
+1. **Log in to Zoho:**
+   - Go to: https://www.zoho.com
+   - Log in with your account
+   - Navigate to **Domains** section
+
+2. **Find Your Domain:**
+   - Look for `puneethjoseph.in` in your domain list
+   - Click on it to manage DNS settings
+
+3. **Access DNS Management:**
+   - Look for **DNS Records** or **DNS Management** option
+   - Click to view/edit DNS records
+
+4. **Add CNAME Record:**
+   - Click **Add Record** or **Create Record**
+   - **Type**: Select `CNAME`
+   - **Name/Host**: Enter `contra` (just the subdomain part, without the domain)
+   - **Value/Target**: Enter `YOUR_USERNAME.github.io` (replace with your GitHub username)
    - **TTL**: `3600` (or leave default)
-   - Click "Save" or "Add"
+   - Click **Save** or **Add**
 
-3. **Example:**
+5. **Example:**
    ```
    Type: CNAME
    Name: contra
-   Value: puneethjoseph.github.io
+   Value: PuneethJoseph.github.io
    TTL: 3600
    ```
 
-4. **Result:**
+6. **Result:**
    - After DNS propagates, `contra.puneethjoseph.in` will point to GitHub Pages
-   - Your main site at `puneethjoseph.in` remains unchanged
+   - Your main site at `puneethjoseph.in` remains unchanged on Zoho Sites
+   - Both sites work independently!
 
 ### Option B: www Subdomain (www.puneethjoseph.in)
 
