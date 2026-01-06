@@ -26,3 +26,6 @@ npm-debug.log*
 *.temp
 .cache/
 
+# Temporary documentation (do not commit .md files created during development)
+temp-docs/
+
