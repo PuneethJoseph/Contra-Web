@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      SOURCE OF TRUTH (Zoho-friendly):
+      - This file is a copy of `contra.html`.
+      - Keep BOTH files in sync. If you edit one, edit the other.
+      - On Zoho Sites, upload THIS file into `Contra/` as `index.html`.
+      - This page is intentionally wired to FLAT assets in the same folder:
+          contra.css
+          contra.js
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConTrac - Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first contract management for macOS and iOS.">
+    <meta name="keywords" content="contract tracker, subscription manager, budget tracker, macOS app, iOS app, contract management, subscription tracking">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.puneethjoseph.in/Contra/index.html">
+    <meta property="og:title" content="ConTrac - Contracts Tracker">
+    <meta property="og:description" content="Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first.">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.puneethjoseph.in/Contra/index.html">
+    <meta property="twitter:title" content="ConTrac - Contracts Tracker">
+    <meta property="twitter:description" content="Track your contracts, subscriptions, rent payments, and insurance premiums.">
+    
+    <title>ConTrac - Contracts Tracker | Track Your Subscriptions & Contracts</title>
+    <link rel="stylesheet" href="contra.css?v=20260111">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" title="Home - ConTrac">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">ConTrac</span>
+            </a>
+            <div class="nav-links">
+                <a href="#hero" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#story" class="nav-link">Story</a>
+                <a href="#privacy" class="nav-link">Privacy</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#download" class="nav-link nav-cta">Download</a>
+                <a href="https://www.puneethjoseph.in" class="nav-link">Back to Main Site</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-background">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-icon">✨</span>
+                    <span class="badge-text">Contracts Tracker</span>
+                </div>
+                <h1 class="hero-title">
+                    Take Control of Your
+                    <span class="gradient-text">Contract Spending</span>
+                </h1>
+                <p class="hero-description">
+                    Track, manage, and optimize all your contracts, subscriptions, rent payments, and insurance premiums in one beautiful, secure app.
+                </p>
+                <div class="hero-cta">
+                    <span class="btn btn-primary btn-coming-soon" style="pointer-events: none;">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="display: none;">Download for macOS</span>
+                        macOS - Coming Soon
+                    </span>
+                    <a href="#download" class="btn btn-secondary">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 18V18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">Unlimited</div>
+                        <div class="stat-label">Contracts</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">60+</div>
+                        <div class="stat-label">Currencies</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Privacy</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="app-preview glass-card">
+                    <div class="app-preview-header">
+                        <div class="app-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="app-title">ConTrac</div>
+                    </div>
+                    <div class="app-preview-content">
+                        <div class="preview-item">
+                            <div class="preview-icon">📄</div>
+                            <div class="preview-text">
+                                <div class="preview-title">Netflix</div>
+                                <div class="preview-subtitle">$15.99/month</div>
+                            </div>
+                        </div>
+                        <div class="preview-item">
+                            <div class="preview-icon">📄</div>
+                            <div class="preview-text">
+                                <div class="preview-title">Spotify Premium</div>
+                                <div class="preview-subtitle">$9.99/month</div>
+                            </div>
+                        </div>
+                        <div class="preview-item">
+                            <div class="preview-icon">📄</div>
+                            <div class="preview-text">
+                                <div class="preview-title">Adobe Creative Cloud</div>
+                                <div class="preview-subtitle">$52.99/month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Everything You Need to Manage Contracts</h2>
+                <p class="section-description">Comprehensive features designed for modern contract and subscription management</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 10V3H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Complete Contract Control</h3>
+                    <p class="feature-description">Add, edit, and delete contracts with ease. Organize by categories, track renewal dates, and manage multi-currency subscriptions.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12L9 6L13 10L21 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 2V8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 12V20H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 20H21V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Smart Analytics</h3>
+                    <p class="feature-description">Get insights that matter with monthly and yearly spending breakdowns, category-based analysis, and spending trends.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 19H2V5H8L10 3H22V19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 7H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Intelligent Import</h3>
+                    <p class="feature-description">Import from anywhere - PDF documents, email receipts, image OCR, and batch file processing for quick setup.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2V22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Budget Management</h3>
+                    <p class="feature-description">Stay within budget with spending limits, progress tracking, alerts when approaching limits, and historical analysis.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 8A6 6 0 0 0 6 8C6 11 3 13 3 16H21C21 13 18 11 18 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Never Miss Renewals</h3>
+                    <p class="feature-description">Customizable renewal reminders, calendar integration, quiet hours support, and multiple notification types.</p>
+                </div>
+                <div class="feature-card glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 11V7C7 5.67392 7.52678 4.40215 8.46447 3.46447C9.40215 2.52678 10.6739 2 12 2C13.3261 2 14.5979 2.52678 15.5355 3.46447C16.4732 4.40215 17 5.67392 17 7V11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Privacy First</h3>
+                    <p class="feature-description">Your data, your control. Local storage only, no cloud sync, secure encryption, and zero data collection.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story" id="story">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">The Problem We All Face</h2>
+                <p class="section-description">You check your bank statement and see charges you don't recognize. A subscription you signed up for months ago—maybe even years—is still quietly draining your account.</p>
+            </div>
+            <div class="story-stats glass-card">
+                <div class="stat-card">
+                    <div class="stat-number">$273</div>
+                    <div class="stat-label">Average monthly spending on forgotten subscriptions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$3,000+</div>
+                    <div class="stat-label">Per year wasted on unused subscriptions</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">84%</div>
+                    <div class="stat-label">Of people underestimate their subscription spending</div>
+                </div>
+            </div>
+            <div class="story-content">
+                <p class="story-text">
+                    Studies show the average person spends <strong>$273 per month</strong> on subscriptions they've forgotten about. That's over <strong>$3,000 per year</strong> going to services you may not even remember subscribing to.
+                </p>
+                <p class="story-text">
+                    ConTrac was built to solve this exact problem. It's not just another subscription tracker—it's your personal financial guardian that puts you back in control. With military-grade privacy protection and intelligent tracking, ConTrac helps you discover forgotten subscriptions, optimize your spending, and make informed decisions about where your money goes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Section -->
+    <section class="privacy" id="privacy">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">🔒 Privacy-First: Your Data Never Leaves Your Device</h2>
+                <p class="section-description">In an era where every app wants to sync your data to the cloud, ConTrac takes a different approach. We believe your financial data is too sensitive to trust to anyone else.</p>
+            </div>
+            <div class="privacy-features">
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 18V18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Local Only Storage</h3>
+                    <p class="feature-description">All your subscription data lives exclusively on your device. No cloud sync, no servers, no third-party access.</p>
+                </div>
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 11.5C21.0034 12.8199 20.6951 14.1219 20.1 15.3C19.3944 16.7118 18.3098 17.8992 16.9674 18.7293C15.6251 19.5594 14.0782 19.9994 12.5 20C11.1801 20.0035 9.87812 19.6951 8.7 19.1L3 21L4.9 15.3C4.30493 14.1219 3.99656 12.8199 4 11.5C4.00061 9.92179 4.44061 8.37488 5.27072 7.03258C6.10083 5.69028 7.28825 4.6056 8.7 3.90003C9.87812 3.30496 11.1801 2.99659 12.5 3.00003H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">iOS Keychain Encryption</h3>
+                    <p class="feature-description">Sensitive information is encrypted using Apple's secure Keychain Services—the same technology that protects your passwords and credit cards.</p>
+                </div>
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Biometric Protection</h3>
+                    <p class="feature-description">Optional Face ID or Touch ID adds an extra layer of security. Your subscription data is protected by the same technology that secures your device.</p>
+                </div>
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M4.93 4.93L19.07 19.07" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">No Data Collection</h3>
+                    <p class="feature-description">We don't track you. We don't analyze your usage. We don't sell your data. We don't even know who you are.</p>
+                </div>
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.42 9A16 16 0 0 1 15 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 1.42A16 16 0 0 1 22.58 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.5 6.5L17.5 17.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1.42 15A16 16 0 0 0 15 22.58" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M22.58 9A16 16 0 0 0 9 1.42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">No Internet Required</h3>
+                    <p class="feature-description">ConTrac works completely offline. Your subscription data never touches the internet, making it impossible for anyone to access it remotely.</p>
+                </div>
+                <div class="privacy-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Open Source Principles</h3>
+                    <p class="feature-description">Built with transparency in mind, using industry-standard encryption and security practices.</p>
+                </div>
+            </div>
+            <div class="privacy-commitment glass-card">
+                <h3 class="commitment-title">Your Privacy is Not a Feature—It's Our Foundation</h3>
+                <p class="commitment-text">
+                    Unlike subscription trackers that require cloud accounts or sync services, ConTrac gives you complete control. Your data belongs to you, stored securely on your device, encrypted and protected. No compromises, no exceptions.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Money Saving Section -->
+    <section class="money-saving" id="money-saving">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">💰 Save Money by Finding Forgotten Subscriptions</h2>
+                <p class="section-description">Most people underestimate how much they spend on subscriptions. A streaming service here, a productivity app there, a fitness app you used once—they add up quickly.</p>
+            </div>
+            <div class="money-saving-intro">
+                <p class="intro-text">Research shows that <strong>84% of people</strong> underestimate their monthly subscription spending. The average person has <strong>12 active subscriptions</strong> but only uses 8 regularly. <strong>42% of subscriptions</strong> are forgotten or unused.</p>
+            </div>
+            <div class="saving-stats">
+                <div class="saving-stat glass-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-content">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Active subscriptions per person (average)</div>
+                    </div>
+                </div>
+                <div class="saving-stat glass-card">
+                    <div class="stat-icon">❌</div>
+                    <div class="stat-content">
+                        <div class="stat-number">42%</div>
+                        <div class="stat-label">Of subscriptions are forgotten or unused</div>
+                    </div>
+                </div>
+            </div>
+            <div class="saving-features">
+                <div class="saving-feature glass-card">
+                    <h3 class="feature-title">Complete Visibility</h3>
+                    <p class="feature-description">See all your subscriptions in one place. Track spending across multiple categories. Identify subscriptions you haven't used in months.</p>
+                </div>
+                <div class="saving-feature glass-card">
+                    <h3 class="feature-title">Smart Reminders</h3>
+                    <p class="feature-description">Get notified before renewals so you can cancel if needed. Reminders for subscriptions you haven't accessed recently. Alerts when spending exceeds your budget.</p>
+                </div>
+                <div class="saving-feature glass-card">
+                    <h3 class="feature-title">Usage Tracking</h3>
+                    <p class="feature-description">Mark subscriptions as "unused" to track which ones you're not actively using. Get insights into your subscription habits. Make data-driven decisions about what to keep and what to cancel.</p>
+                </div>
+                <div class="saving-feature glass-card">
+                    <h3 class="feature-title">Budget Alerts</h3>
+                    <p class="feature-description">Set spending limits by category or overall. Get notified when you're approaching your budget. Prevent overspending before it happens.</p>
+                </div>
+            </div>
+            <div class="saving-example glass-card">
+                <h3 class="example-title">Real Savings Example</h3>
+                <p class="example-text">
+                    Sarah discovered she was paying for a fitness app she hadn't opened in 6 months ($9.99/month), a cloud storage service she no longer needed ($4.99/month), a music streaming service she forgot about ($14.99/month), and a productivity app she tried once ($12.99/month).
+                </p>
+                <div class="example-result">
+                    <div class="result-label">Total saved:</div>
+                    <div class="result-amount">$42.96/month = $515.52/year</div>
+                </div>
+                <p class="example-conclusion">ConTrac helped her identify these forgotten subscriptions and cancel them immediately.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Budget Analysis Section -->
+    <section class="budget-analysis" id="budget-analysis">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">📊 Budget Analysis: Know Where Your Money Goes</h2>
+                <p class="section-description">ConTrac doesn't just track your subscriptions—it helps you understand your spending patterns and make smarter financial decisions.</p>
+            </div>
+            <div class="budget-features-grid">
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="18" height="18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 2V6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Monthly & Yearly Breakdowns</h3>
+                    <p class="feature-description">See your total monthly subscription spending at a glance. Calculate yearly costs to understand long-term impact. Compare spending across different time periods.</p>
+                </div>
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M22 19H2V5H8L10 3H22V19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 7H22" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 11H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 15H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Category-Based Analysis</h3>
+                    <p class="feature-description">Organize subscriptions by category (Streaming, Productivity, Fitness, etc.). See which categories consume most of your budget. Identify areas where you might be overspending.</p>
+                </div>
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 12L9 6L13 10L21 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 2V8H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3 12V20H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M11 20H21V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Spending Trends</h3>
+                    <p class="feature-description">Track how your subscription spending changes over time. Identify months with unusually high spending. Spot patterns in your subscription habits.</p>
+                </div>
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Budget Management</h3>
+                    <p class="feature-description">Set spending limits for individual categories or overall. Get real-time progress indicators showing how close you are to your limits. Receive alerts when approaching or exceeding budgets.</p>
+                </div>
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 3V21H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 16L12 11L16 15L21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 10V3H14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Visual Insights</h3>
+                    <p class="feature-description">Interactive charts showing spending distribution. Progress bars for budget tracking. Trend lines showing spending patterns. Category breakdowns with visual representations.</p>
+                </div>
+                <div class="budget-feature glass-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Export & Reporting</h3>
+                    <p class="feature-description">Export your subscription data for detailed analysis. Generate reports for tax purposes or financial planning. Share spending summaries with family or financial advisors.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 class="section-title">Built for People Who Want Control</h2>
+                    <p class="about-description">
+                        ConTrac was created to solve a simple problem: managing multiple contracts, subscriptions, and recurring payments is overwhelming. 
+                        Spreadsheets are clunky, manual tracking is error-prone, and most apps compromise your privacy.
+                    </p>
+                    <p class="about-description">
+                        We built ConTrac to be different. It's beautiful, powerful, and puts you in complete control. Your data stays on your device, 
+                        encrypted and secure. No cloud sync, no data collection, no compromises.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">🔒</div>
+                            <div class="value-content">
+                                <h4 class="value-title">Privacy First</h4>
+                                <p class="value-description">Your data never leaves your device</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">👤</div>
+                            <div class="value-content">
+                                <h4 class="value-title">User Control</h4>
+                                <p class="value-description">You own and control your data</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">✨</div>
+                            <div class="value-content">
+                                <h4 class="value-title">Simplicity</h4>
+                                <p class="value-description">Easy to use, powerful features</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="platform-cards">
+                        <div class="platform-card glass-card">
+                            <div class="platform-icon">💻</div>
+                            <h4 class="platform-title">macOS</h4>
+                            <p class="platform-description">Full-featured desktop experience</p>
+                            <div class="platform-requirements" style="color: var(--color-accent); font-weight: 600;">Coming Soon</div>
+                        </div>
+                        <div class="platform-card glass-card">
+                            <div class="platform-icon">📱</div>
+                            <h4 class="platform-title">iOS</h4>
+                            <p class="platform-description">Optimized for iPhone and iPad</p>
+                            <div class="platform-requirements">iOS 15.0+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section class="download" id="download">
+        <div class="container">
+            <div class="download-content glass-card">
+                <h2 class="section-title">Ready to Take Control?</h2>
+                <p class="download-description">
+                    Download ConTrac today and start managing your contracts with confidence. 
+                    Free to download, no subscription required.
+                </p>
+                <div class="download-buttons">
+                    <span class="btn btn-primary btn-large btn-coming-soon" style="pointer-events: none;">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="display: none;">Download for macOS</span>
+                        macOS - Coming Soon
+                    </span>
+                    <a href="#" class="btn btn-secondary btn-large">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 18V18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        Download for iOS
+                    </a>
+                </div>
+                <div class="download-trust">
+                    <div class="trust-item">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Free to download</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>No subscription required</span>
+                    </div>
+                    <div class="trust-item">
+                        <svg class="trust-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Privacy-first</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span class="logo-text">ConTrac</span>
+                    </div>
+                    <p class="footer-tagline">Contracts Tracker</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4 class="footer-title">Navigation</h4>
+                        <a href="#hero" class="footer-link">Home</a>
+                        <a href="#features" class="footer-link">Features</a>
+                        <a href="#story" class="footer-link">Story</a>
+                        <a href="#privacy" class="footer-link">Privacy</a>
+                        <a href="#about" class="footer-link">About</a>
+                        <a href="#download" class="footer-link">Download</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4 class="footer-title">Support</h4>
+                        <a href="#" class="footer-link">Documentation</a>
+                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="https://www.puneethjoseph.in" class="footer-link">Contact</a>
+                        <a href="https://www.puneethjoseph.in" class="footer-link">Back to Main Site</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-copyright">© 2025 ConTrac. All rights reserved.</p>
+                <p class="footer-credit">Built by <a href="https://www.puneethjoseph.in" class="footer-credit-link">Puneeth Joseph</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contra.js?v=20260103"></script>
+</body>
+</html>
+
+
