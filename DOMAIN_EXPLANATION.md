@@ -1,11 +1,23 @@
 # Understanding Subdomains: contra.puneethjoseph.in
 
+## ✅ Subdomains are FREE!
+
+**Important:** When you own a domain (like `puneethjoseph.in`), you automatically own ALL subdomains for FREE. You don't need to pay anything extra!
+
+- ✅ `contra.puneethjoseph.in` - FREE (just configure DNS)
+- ✅ `www.puneethjoseph.in` - FREE
+- ✅ `blog.puneethjoseph.in` - FREE
+- ✅ `shop.puneethjoseph.in` - FREE
+- ✅ `anything.puneethjoseph.in` - FREE
+
+**You can create unlimited subdomains at no extra cost!**
+
 ## What is a Subdomain?
 
 A **subdomain** is a prefix added to your main domain. Think of it like this:
 
-- **Main domain**: `puneethjoseph.in` (your root domain)
-- **Subdomain**: `contra.puneethjoseph.in` (a part of your domain)
+- **Main domain**: `puneethjoseph.in` (your root domain - you own this)
+- **Subdomain**: `contra.puneethjoseph.in` (automatically yours - FREE!)
 
 ## How Subdomains Work
 
