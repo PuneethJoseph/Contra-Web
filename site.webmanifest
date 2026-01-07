@@ -1,0 +1,35 @@
+{
+  "name": "ConTrac - Contracts Tracker",
+  "short_name": "ConTrac",
+  "description": "Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first contract management for iOS.",
+  "icons": [
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#007AFF",
+  "background_color": "#0c0c0c",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "productivity", "utilities"]
+}
+

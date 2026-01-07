@@ -29,8 +29,11 @@
     if (navToggle) {
         navToggle.addEventListener('click', () => {
             const navLinksContainer = document.querySelector('.nav-links');
-            navToggle.classList.toggle('active');
+            const isExpanded = navToggle.classList.toggle('active');
             navLinksContainer?.classList.toggle('active');
+            
+            // Update ARIA attributes for accessibility
+            navToggle.setAttribute('aria-expanded', isExpanded);
         });
     }
 

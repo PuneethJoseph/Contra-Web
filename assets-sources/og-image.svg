@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c0c0c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Primary gradient -->
+    <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#5AC8FA;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#007AFF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0051D5;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect -->
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Decorative orbs -->
+  <circle cx="200" cy="150" r="150" fill="#667eea" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="1000" cy="480" r="120" fill="#f5576c" opacity="0.3" filter="url(#glow)"/>
+  <circle cx="600" cy="300" r="100" fill="#4facfe" opacity="0.2" filter="url(#glow)"/>
+  
+  <!-- Main content container -->
+  <g transform="translate(100, 150)">
+    <!-- Logo/Icon -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="120" height="120" rx="20" fill="url(#primaryGradient)" opacity="0.9"/>
+      <g transform="translate(30, 30)" fill="white">
+        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M14 2V8H20" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <path d="M16 13H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M16 17H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M10 9H8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </g>
+    
+    <!-- Title -->
+    <text x="150" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="72" font-weight="800" fill="white">
+      ConTrac
+    </text>
+    
+    <!-- Subtitle -->
+    <text x="150" y="100" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="36" font-weight="400" fill="rgba(255, 255, 255, 0.8)">
+      Contracts Tracker
+    </text>
+    
+    <!-- Description -->
+    <text x="0" y="180" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="32" font-weight="400" fill="rgba(255, 255, 255, 0.9)" width="900">
+      Track your contracts, subscriptions, rent payments, and insurance premiums.
+    </text>
+    
+    <!-- Tagline -->
+    <text x="0" y="240" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="28" font-weight="500" fill="url(#primaryGradient)">
+      Beautiful, secure, and privacy-first contract management for iOS
+    </text>
+    
+    <!-- Features list -->
+    <g transform="translate(0, 300)">
+      <circle cx="10" cy="5" r="4" fill="#5AC8FA"/>
+      <text x="25" y="10" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" fill="rgba(255, 255, 255, 0.8)">100% Local Storage</text>
+      
+      <circle cx="10" cy="45" r="4" fill="#5AC8FA"/>
+      <text x="25" y="50" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" fill="rgba(255, 255, 255, 0.8)">Multi-Currency Support</text>
+      
+      <circle cx="10" cy="85" r="4" fill="#5AC8FA"/>
+      <text x="25" y="90" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" fill="rgba(255, 255, 255, 0.8)">Budget Management</text>
+    </g>
+  </g>
+  
+  <!-- Website URL (bottom right) -->
+  <text x="1000" y="600" font-family="Inter, -apple-system, BlinkMacSystemFont, sans-serif" font-size="24" font-weight="500" fill="rgba(255, 255, 255, 0.6)" text-anchor="end">
+    contra.puneethjoseph.in
+  </text>
+</svg>
+

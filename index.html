@@ -12,20 +12,104 @@
     -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ConTrac - Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first contract management for macOS and iOS.">
+    <meta name="description" content="ConTrac - Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first contract management for iOS (macOS coming soon).">
     <meta name="keywords" content="contract tracker, subscription manager, budget tracker, macOS app, iOS app, contract management, subscription tracking">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://contra.puneethjoseph.in/">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.puneethjoseph.in/Contra/index.html">
+    <meta property="og:url" content="https://contra.puneethjoseph.in/">
     <meta property="og:title" content="ConTrac - Contracts Tracker">
     <meta property="og:description" content="Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first.">
+    <meta property="og:image" content="https://contra.puneethjoseph.in/og-image.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="ConTrac">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.puneethjoseph.in/Contra/index.html">
+    <meta property="twitter:url" content="https://contra.puneethjoseph.in/">
     <meta property="twitter:title" content="ConTrac - Contracts Tracker">
     <meta property="twitter:description" content="Track your contracts, subscriptions, rent payments, and insurance premiums.">
+    <meta property="twitter:image" content="https://contra.puneethjoseph.in/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#007AFF">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "ConTrac",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "ratingCount": "1"
+      },
+      "description": "Track your contracts, subscriptions, rent payments, and insurance premiums. Beautiful, secure, and privacy-first contract management for iOS.",
+      "screenshot": "https://contra.puneethjoseph.in/screenshot.jpg",
+      "author": {
+        "@type": "Person",
+        "name": "Puneeth Joseph",
+        "url": "https://www.puneethjoseph.in"
+      },
+      "publisher": {
+        "@type": "Person",
+        "name": "Puneeth Joseph"
+      },
+      "url": "https://contra.puneethjoseph.in/",
+      "downloadUrl": "https://apps.apple.com/app/contrac/id[APP_ID]",
+      "softwareVersion": "1.0",
+      "releaseNotes": "Initial release of ConTrac - Privacy-first subscription tracking app.",
+      "featureList": [
+        "Track unlimited subscriptions and contracts",
+        "Multi-currency support (60+ currencies)",
+        "Budget management and spending limits",
+        "Renewal reminders and notifications",
+        "Calendar integration",
+        "Smart analytics and spending insights",
+        "Import from PDF and images",
+        "100% local storage - no cloud sync required",
+        "AES-256-GCM encryption",
+        "Face ID and Touch ID support"
+      ],
+      "requirements": "iOS 26",
+      "permissions": "Calendar, Notifications"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "ConTrac",
+      "url": "https://contra.puneethjoseph.in/",
+      "description": "ConTrac - Privacy-first subscription and contract tracking app for iOS",
+      "publisher": {
+        "@type": "Person",
+        "name": "Puneeth Joseph"
+      },
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://contra.puneethjoseph.in/support.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
     
     <title>ConTrac - Contracts Tracker | Track Your Subscriptions & Contracts</title>
     <link rel="stylesheet" href="contra.css?v=20260111">
@@ -34,10 +118,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Skip to main content (Accessibility) -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo" title="Home - ConTrac">
+            <a href="#hero" class="nav-logo" title="Home - ConTrac" aria-label="ConTrac Home">
                 <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -47,16 +134,16 @@
                 </svg>
                 <span class="logo-text">ConTrac</span>
             </a>
-            <div class="nav-links">
-                <a href="#hero" class="nav-link">Home</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#story" class="nav-link">Story</a>
-                <a href="#privacy" class="nav-link">Privacy</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#download" class="nav-link nav-cta">Download</a>
-                <a href="https://www.puneethjoseph.in" class="nav-link">Back to Main Site</a>
+            <div class="nav-links" id="nav-links" role="menubar">
+                <a href="#hero" class="nav-link" role="menuitem" aria-label="Go to home section">Home</a>
+                <a href="#features" class="nav-link" role="menuitem" aria-label="Go to features section">Features</a>
+                <a href="#story" class="nav-link" role="menuitem" aria-label="Go to story section">Story</a>
+                <a href="#privacy" class="nav-link" role="menuitem" aria-label="Go to privacy section">Privacy</a>
+                <a href="#about" class="nav-link" role="menuitem" aria-label="Go to about section">About</a>
+                <a href="#download" class="nav-link nav-cta" role="menuitem" aria-label="Go to download section">Download</a>
+                <a href="https://www.puneethjoseph.in" class="nav-link" role="menuitem" aria-label="Visit main website">Back to Main Site</a>
             </div>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -65,7 +152,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="hero">
+    <main id="main-content">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
         <div class="hero-background">
             <div class="gradient-orb orb-1"></div>
             <div class="gradient-orb orb-2"></div>
@@ -77,7 +165,7 @@
                     <span class="badge-icon">✨</span>
                     <span class="badge-text">Contracts Tracker</span>
                 </div>
-                <h1 class="hero-title">
+                <h1 class="hero-title" id="hero-title">
                     Take Control of Your
                     <span class="gradient-text">Contract Spending</span>
                 </h1>
@@ -94,8 +182,8 @@
                         <span style="display: none;">Download for macOS</span>
                         macOS - Coming Soon
                     </span>
-                    <a href="#download" class="btn btn-secondary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="https://apps.apple.com/app/contrac/id[APP_ID]" class="btn btn-secondary" aria-label="Download ConTrac from the App Store" target="_blank" rel="noopener noreferrer">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
                             <path d="M12 18V18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -156,10 +244,10 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features" id="features">
+    <section class="features" id="features" aria-labelledby="features-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Everything You Need to Manage Contracts</h2>
+                <h2 class="section-title" id="features-title">Everything You Need to Manage Contracts</h2>
                 <p class="section-description">Comprehensive features designed for modern contract and subscription management</p>
             </div>
             <div class="features-grid">
@@ -263,10 +351,10 @@
     </section>
 
     <!-- Privacy Section -->
-    <section class="privacy" id="privacy">
+    <section class="privacy" id="privacy" aria-labelledby="privacy-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">🔒 Privacy-First: Your Data Never Leaves Your Device</h2>
+                <h2 class="section-title" id="privacy-title">🔒 Privacy-First: Your Data Never Leaves Your Device</h2>
                 <p class="section-description">In an era where every app wants to sync your data to the cloud, ConTrac takes a different approach. We believe your financial data is too sensitive to trust to anyone else.</p>
             </div>
             <div class="privacy-features">
@@ -337,15 +425,23 @@
                 <p class="commitment-text">
                     Unlike subscription trackers that require cloud accounts or sync services, ConTrac gives you complete control. Your data belongs to you, stored securely on your device, encrypted and protected. No compromises, no exceptions.
                 </p>
+                <p style="margin-top: var(--spacing-md); text-align: center;">
+                    <a href="privacy.html" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: var(--spacing-xs);">
+                        Read Full Privacy Policy
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12H19M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Money Saving Section -->
-    <section class="money-saving" id="money-saving">
+    <section class="money-saving" id="money-saving" aria-labelledby="money-saving-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">💰 Save Money by Finding Forgotten Subscriptions</h2>
+                <h2 class="section-title" id="money-saving-title">💰 Save Money by Finding Forgotten Subscriptions</h2>
                 <p class="section-description">Most people underestimate how much they spend on subscriptions. A streaming service here, a productivity app there, a fitness app you used once—they add up quickly.</p>
             </div>
             <div class="money-saving-intro">
@@ -400,10 +496,10 @@
     </section>
 
     <!-- Budget Analysis Section -->
-    <section class="budget-analysis" id="budget-analysis">
+    <section class="budget-analysis" id="budget-analysis" aria-labelledby="budget-analysis-title">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">📊 Budget Analysis: Know Where Your Money Goes</h2>
+                <h2 class="section-title" id="budget-analysis-title">📊 Budget Analysis: Know Where Your Money Goes</h2>
                 <p class="section-description">ConTrac doesn't just track your subscriptions—it helps you understand your spending patterns and make smarter financial decisions.</p>
             </div>
             <div class="budget-features-grid">
@@ -480,11 +576,11 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="about" aria-labelledby="about-title">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2 class="section-title">Built for People Who Want Control</h2>
+                    <h2 class="section-title" id="about-title">Built for People Who Want Control</h2>
                     <p class="about-description">
                         ConTrac was created to solve a simple problem: managing multiple contracts, subscriptions, and recurring payments is overwhelming. 
                         Spreadsheets are clunky, manual tracking is error-prone, and most apps compromise your privacy.
@@ -529,7 +625,7 @@
                             <div class="platform-icon">📱</div>
                             <h4 class="platform-title">iOS</h4>
                             <p class="platform-description">Optimized for iPhone and iPad</p>
-                            <div class="platform-requirements">iOS 15.0+</div>
+                            <div class="platform-requirements">iOS 26</div>
                         </div>
                     </div>
                 </div>
@@ -538,13 +634,13 @@
     </section>
 
     <!-- Download Section -->
-    <section class="download" id="download">
+    <section class="download" id="download" aria-labelledby="download-title">
         <div class="container">
             <div class="download-content glass-card">
-                <h2 class="section-title">Ready to Take Control?</h2>
+                <h2 class="section-title" id="download-title">Ready to Take Control?</h2>
                 <p class="download-description">
-                    Download ConTrac today and start managing your contracts with confidence. 
-                    Free to download, no subscription required.
+                    Download ConTrac for iOS today and start managing your contracts with confidence. 
+                    Free to download, no subscription required. macOS version coming soon.
                 </p>
                 <div class="download-buttons">
                     <span class="btn btn-primary btn-large btn-coming-soon" style="pointer-events: none;">
@@ -556,8 +652,8 @@
                         <span style="display: none;">Download for macOS</span>
                         macOS - Coming Soon
                     </span>
-                    <a href="#" class="btn btn-secondary btn-large">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="https://apps.apple.com/app/contrac/id[APP_ID]" class="btn btn-secondary btn-large" aria-label="Download ConTrac for iOS from the App Store" target="_blank" rel="noopener noreferrer">
+                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                             <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
                             <path d="M12 18V18.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                         </svg>
@@ -588,6 +684,9 @@
                         <span>Privacy-first</span>
                     </div>
                 </div>
+                <p style="margin-top: var(--spacing-md); font-size: var(--font-size-sm); color: var(--text-tertiary); text-align: center;">
+                    By downloading, you agree to our <a href="terms.html" style="color: var(--color-primary-light); text-decoration: underline;">Terms of Service</a> and <a href="privacy.html" style="color: var(--color-primary-light); text-decoration: underline;">Privacy Policy</a>.
+                </p>
             </div>
         </div>
     </section>
@@ -618,8 +717,9 @@
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-title">Support</h4>
-                        <a href="#" class="footer-link">Documentation</a>
-                        <a href="#" class="footer-link">Privacy Policy</a>
+                        <a href="support.html" class="footer-link">Support & Help</a>
+                        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+                        <a href="terms.html" class="footer-link">Terms of Service</a>
                         <a href="https://www.puneethjoseph.in" class="footer-link">Contact</a>
                         <a href="https://www.puneethjoseph.in" class="footer-link">Back to Main Site</a>
                     </div>
@@ -631,6 +731,7 @@
             </div>
         </div>
     </footer>
+    </main>
 
     <script src="contra.js?v=20260103"></script>
 </body>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ConTrac Support - Get help with subscription tracking, FAQs, troubleshooting, and contact information.">
+    <title>Support - ConTrac</title>
+    <link rel="stylesheet" href="contra.css?v=20260111">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .support-page {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--spacing-xl) var(--spacing-md);
+            color: var(--text-primary);
+        }
+        .support-page h1 {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-md);
+            background: linear-gradient(135deg, var(--color-primary-light) 0%, var(--color-primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .support-page h2 {
+            font-size: var(--font-size-2xl);
+            margin-top: var(--spacing-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-primary-light);
+        }
+        .support-page h3 {
+            font-size: var(--font-size-xl);
+            margin-top: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+            color: var(--text-secondary);
+        }
+        .support-page p, .support-page li {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--spacing-sm);
+        }
+        .support-page ul {
+            margin-left: var(--spacing-md);
+            margin-bottom: var(--spacing-md);
+        }
+        .support-page strong {
+            color: var(--text-primary);
+        }
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--color-primary-light);
+            text-decoration: none;
+            margin-bottom: var(--spacing-lg);
+            transition: color var(--transition-base);
+        }
+        .back-link:hover {
+            color: var(--color-primary);
+        }
+        .faq-item {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+            backdrop-filter: blur(10px);
+        }
+        .faq-question {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-xs);
+        }
+        .faq-answer {
+            color: var(--text-secondary);
+        }
+        .contact-section {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+            backdrop-filter: blur(10px);
+        }
+        .contact-item {
+            margin-bottom: var(--spacing-md);
+        }
+        .contact-item strong {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            color: var(--color-primary-light);
+        }
+        .quick-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+        }
+        .quick-link-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--radius-md);
+            padding: var(--spacing-md);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all var(--transition-base);
+            backdrop-filter: blur(10px);
+        }
+        .quick-link-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--glass-shadow-hover);
+            border-color: var(--color-primary-light);
+        }
+        .quick-link-card h3 {
+            color: var(--color-primary-light);
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo" title="Home - ConTrac">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span class="logo-text">ConTrac</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#story" class="nav-link">Story</a>
+                <a href="index.html#privacy" class="nav-link">Privacy</a>
+                <a href="index.html#about" class="nav-link">About</a>
+                <a href="index.html#download" class="nav-link nav-cta">Download</a>
+                <a href="https://www.puneethjoseph.in" class="nav-link">Back to Main Site</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="support-page">
+        <a href="index.html" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <h1>Support & Help</h1>
+        <p style="font-size: var(--font-size-lg); color: var(--text-secondary); margin-bottom: var(--spacing-lg);">
+            Get help with ConTrac. Find answers to common questions, troubleshooting tips, and contact information.
+        </p>
+
+        <div class="quick-links">
+            <a href="#faq" class="quick-link-card">
+                <h3>📋 Frequently Asked Questions</h3>
+                <p>Find answers to common questions about using ConTrac.</p>
+            </a>
+            <a href="#troubleshooting" class="quick-link-card">
+                <h3>🔧 Troubleshooting</h3>
+                <p>Solutions to common issues and problems.</p>
+            </a>
+            <a href="#getting-started" class="quick-link-card">
+                <h3>🚀 Getting Started</h3>
+                <p>Learn how to use ConTrac effectively.</p>
+            </a>
+            <a href="#contact" class="quick-link-card">
+                <h3>📧 Contact Us</h3>
+                <p>Need more help? Get in touch with our support team.</p>
+            </a>
+        </div>
+
+        <h2 id="faq">Frequently Asked Questions</h2>
+
+        <div class="faq-item">
+            <div class="faq-question">Is my data secure?</div>
+            <div class="faq-answer">
+                Yes! ConTrac is designed with privacy as a core principle. All your data is stored locally on your device with AES-256-GCM encryption. Your data never leaves your device unless you explicitly enable iCloud sync. We don't collect, track, or share any of your information.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do I need an account to use ConTrac?</div>
+            <div class="faq-answer">
+                ConTrac requires authentication to protect your subscription data. You can authenticate using:
+                <ul style="margin-top: var(--spacing-xs);">
+                    <li><strong>Sign in with Apple:</strong> Quick and secure authentication using your Apple ID</li>
+                    <li><strong>Face ID or Touch ID:</strong> Biometric authentication for quick access (if available on your device)</li>
+                    <li><strong>Demo Account:</strong> For testing purposes (development builds only)</li>
+                </ul>
+                Once authenticated, all your data is stored locally on your device. No cloud account or external service is required for core functionality. Optional iCloud sync is available if you want to sync across devices.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I sync my data across devices?</div>
+            <div class="faq-answer">
+                Yes, you can optionally enable iCloud sync in the app settings. When enabled, your data will be synced across all your Apple devices using your personal iCloud account. This is completely optional and can be disabled at any time.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Does ConTrac work offline?</div>
+            <div class="faq-answer">
+                Yes! ConTrac works completely offline. All core features work without an internet connection. The only feature that requires internet is optional iCloud sync (if enabled).
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I export my subscription data?</div>
+            <div class="faq-answer">
+                Yes! You can export your subscription data at any time from within the app. This allows you to create backups or analyze your data in other applications.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Does ConTrac support multiple currencies?</div>
+            <div class="faq-answer">
+                Yes! ConTrac supports 60+ currencies. You can track subscriptions in different currencies and see spending breakdowns by currency.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I set up budgets and spending limits?</div>
+            <div class="faq-answer">
+                Yes! ConTrac includes comprehensive budget management. You can set spending limits by category or overall, track progress, and receive alerts when approaching your limits.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do I get renewal reminders?</div>
+            <div class="faq-answer">
+                ConTrac can send you customizable renewal reminders before your subscriptions renew. You can configure reminder timing, quiet hours, and notification types in the app settings. You can also integrate with your calendar for automatic event creation.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is Face ID or Touch ID supported?</div>
+            <div class="faq-answer">
+                Yes! ConTrac supports both Face ID and Touch ID for secure authentication. This is an optional feature that adds an extra layer of security to protect your subscription data.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is ConTrac free?</div>
+            <div class="faq-answer">
+                ConTrac is free to download with no subscription required. All features are available without any in-app purchases or subscriptions.
+            </div>
+        </div>
+
+        <h2 id="troubleshooting">Troubleshooting</h2>
+
+        <h3>App Won't Launch</h3>
+        <ul>
+            <li><strong>Restart your device:</strong> Sometimes a simple restart resolves launch issues.</li>
+            <li><strong>Check system requirements:</strong> Ensure your device meets the iOS 26 requirement. (macOS version coming soon)</li>
+            <li><strong>Reinstall the app:</strong> If the problem persists, try deleting and reinstalling the app (make sure to export your data first if you have important information).</li>
+        </ul>
+
+        <h3>Data Not Appearing</h3>
+        <ul>
+            <li><strong>Check iCloud sync:</strong> If you have iCloud sync enabled, ensure you're signed into the same iCloud account on all devices.</li>
+            <li><strong>Verify data location:</strong> Data is stored locally. If you've recently restored from backup, your data should be restored automatically.</li>
+            <li><strong>Export and reimport:</strong> As a last resort, you can export your data and reimport it.</li>
+        </ul>
+
+        <h3>Notifications Not Working</h3>
+        <ul>
+            <li><strong>Check notification permissions:</strong> Go to Settings → ConTrac → Notifications and ensure notifications are enabled.</li>
+            <li><strong>Verify notification settings:</strong> Check the notification settings within the app to ensure reminders are configured correctly.</li>
+            <li><strong>Check Do Not Disturb:</strong> Ensure Do Not Disturb or Focus modes aren't blocking notifications.</li>
+        </ul>
+
+        <h3>Calendar Integration Issues</h3>
+        <ul>
+            <li><strong>Check calendar permissions:</strong> Go to Settings → ConTrac → Calendar and ensure calendar access is granted.</li>
+            <li><strong>Verify calendar selection:</strong> Make sure you've selected the correct calendar in the app settings.</li>
+            <li><strong>Check calendar sync:</strong> Ensure your calendar app is syncing properly.</li>
+        </ul>
+
+        <h3>Import Not Working</h3>
+        <ul>
+            <li><strong>Check file format:</strong> Ensure your file is in a supported format (PDF, images, etc.).</li>
+            <li><strong>Verify file permissions:</strong> Ensure the app has permission to access your files.</li>
+            <li><strong>Try a different file:</strong> Some files may have formatting issues. Try importing a different subscription document.</li>
+        </ul>
+
+        <h2 id="getting-started">Getting Started</h2>
+
+        <h3>Quick Start Guide</h3>
+        <ol>
+            <li><strong>Download and Install:</strong> Download ConTrac for iOS from the App Store and install it on your iPhone or iPad (iOS 26 required). macOS version coming soon.</li>
+            <li><strong>Add Your First Subscription:</strong> Tap the "+" button to add a subscription manually, or use the import feature to add from documents.</li>
+            <li><strong>Set Up Categories:</strong> Organize your subscriptions by category (Streaming, Productivity, Fitness, etc.).</li>
+            <li><strong>Configure Notifications:</strong> Set up renewal reminders so you never miss a subscription renewal.</li>
+            <li><strong>Create Budgets:</strong> Set spending limits to help manage your subscription costs.</li>
+            <li><strong>Explore Analytics:</strong> View your spending patterns and identify opportunities to save money.</li>
+        </ol>
+
+        <h3>Key Features to Try</h3>
+        <ul>
+            <li><strong>Import from Documents:</strong> Import subscriptions from PDF receipts, email confirmations, or images using OCR.</li>
+            <li><strong>Budget Management:</strong> Set spending limits and track your progress toward financial goals.</li>
+            <li><strong>Spending Analytics:</strong> View monthly and yearly spending breakdowns by category and currency.</li>
+            <li><strong>Calendar Integration:</strong> Automatically create calendar events for subscription renewals.</li>
+            <li><strong>Multi-Currency Support:</strong> Track subscriptions in different currencies and see unified spending reports.</li>
+        </ul>
+
+        <h2 id="contact">Contact Us</h2>
+
+        <div class="contact-section">
+            <p>Need more help? We're here to assist you!</p>
+
+            <div class="contact-item">
+                <strong>Website</strong>
+                <a href="https://contra.puneethjoseph.in" style="color: var(--color-primary-light);">https://contra.puneethjoseph.in</a>
+            </div>
+
+            <div class="contact-item">
+                <strong>Privacy Policy</strong>
+                <a href="privacy.html" style="color: var(--color-primary-light);">View Privacy Policy</a>
+            </div>
+
+            <div class="contact-item">
+                <strong>Terms of Service</strong>
+                <a href="terms.html" style="color: var(--color-primary-light);">View Terms of Service</a>
+            </div>
+
+            <div class="contact-item">
+                <strong>Before Contacting Support</strong>
+                <ul style="margin-top: var(--spacing-xs);">
+                    <li>Check this support page for common questions and solutions</li>
+                    <li>Review the troubleshooting section above</li>
+                    <li>Try restarting the app or your device</li>
+                    <li>Ensure you're running the latest version of ConTrac</li>
+                </ul>
+            </div>
+
+            <div class="contact-item">
+                <strong>When Reporting Issues</strong>
+                <p style="margin-top: var(--spacing-xs);">Please include the following information:</p>
+                <ul>
+                    <li>Device model and iOS version (iOS 26 required)</li>
+                    <li>ConTrac app version (found in About section)</li>
+                    <li>Detailed description of the issue</li>
+                    <li>Steps to reproduce the problem</li>
+                    <li>Screenshots or error messages (if applicable)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--glass-border); text-align: center; color: var(--text-tertiary);">
+            <p>Thank you for using ConTrac! We're committed to providing you with the best subscription tracking experience.</p>
+        </div>
+    </div>
+
+    <script src="contra.js?v=20260103"></script>
+</body>
+</html>
+

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConTrac OG Image Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            background: #1a1a1a;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.5;
+        }
+        
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            top: -150px;
+            left: -150px;
+        }
+        
+        .orb-2 {
+            width: 350px;
+            height: 350px;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            bottom: -100px;
+            right: -100px;
+        }
+        
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            top: 50%;
+            right: 10%;
+        }
+        
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 80px 100px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .logo-box {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #5AC8FA 0%, #007AFF 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 40px rgba(0, 122, 255, 0.4);
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            stroke: white;
+            fill: none;
+        }
+        
+        .title {
+            font-size: 72px;
+            font-weight: 800;
+            color: white;
+            margin: 0;
+            line-height: 1.1;
+        }
+        
+        .subtitle {
+            font-size: 36px;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+        }
+        
+        .description {
+            font-size: 32px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-top: 40px;
+            line-height: 1.4;
+            max-width: 900px;
+        }
+        
+        .tagline {
+            font-size: 28px;
+            font-weight: 500;
+            background: linear-gradient(135deg, #5AC8FA 0%, #007AFF 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-top: 30px;
+        }
+        
+        .features {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .feature-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #5AC8FA;
+            flex-shrink: 0;
+        }
+        
+        .url {
+            position: absolute;
+            bottom: 40px;
+            right: 100px;
+            font-size: 24px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .instructions {
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            max-width: 1200px;
+        }
+        
+        .instructions h2 {
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+        }
+        
+        .instructions li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="container" id="ogImage">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            
+            <div class="content">
+                <div class="logo-container">
+                    <div class="logo-box">
+                        <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 13H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M16 17H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M10 9H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="title">ConTrac</h1>
+                        <p class="subtitle">Contracts Tracker</p>
+                    </div>
+                </div>
+                
+                <p class="description">
+                    Track your contracts, subscriptions, rent payments, and insurance premiums.
+                </p>
+                
+                <p class="tagline">
+                    Beautiful, secure, and privacy-first contract management for iOS
+                </p>
+                
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-dot"></div>
+                        <span>100% Local Storage</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-dot"></div>
+                        <span>Multi-Currency Support</span>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-dot"></div>
+                        <span>Budget Management</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="url">contra.puneethjoseph.in</div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Generate the OG Image:</h2>
+            <ol>
+                <li><strong>Option 1 - Screenshot:</strong> Take a screenshot of the image above (1200x630px). Use browser dev tools to set viewport to exactly 1200x630, then screenshot.</li>
+                <li><strong>Option 2 - Browser Extension:</strong> Use a browser extension like "Full Page Screen Capture" to capture the container div.</li>
+                <li><strong>Option 3 - Online Tool:</strong> Use tools like <a href="https://www.canva.com" target="_blank" style="color: #5AC8FA;">Canva</a> or <a href="https://www.figma.com" target="_blank" style="color: #5AC8FA;">Figma</a> to recreate this design.</li>
+                <li><strong>Option 4 - Convert SVG:</strong> Convert the <code>og-image.svg</code> file to PNG/JPG using online converters or design software.</li>
+            </ol>
+            <p style="margin-top: 15px;"><strong>Save as:</strong> <code>og-image.jpg</code> (1200x630px, JPG format recommended for smaller file size)</p>
+        </div>
+    </div>
+</body>
+</html>
+
