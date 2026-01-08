@@ -2,6 +2,30 @@
 
 All notable changes to the ConTrac website will be documented in this file.
 
+## [1.1.2] - 2026-01-08
+
+### Added
+- **Progressive Web App (PWA) Support:**
+  - Service Worker (`sw.js`) for offline functionality and caching
+  - Automatic cache management for static assets
+  - Background sync and push notification support (ready for future use)
+- **Modern 2026 JavaScript Features:**
+  - Scroll-triggered animations using IntersectionObserver API
+  - Animated statistics counters when elements enter viewport
+  - View Transitions API for smooth page navigation
+  - Web Animations API for enhanced hover effects on feature cards
+- **Performance Optimizations:**
+  - Resource hints (`preconnect`, `dns-prefetch`, `preload`) for faster loading
+  - Animation attributes (`data-animation`) on feature cards and stat cards
+  - Optimized resource loading strategy
+
+### Technical
+- Service Worker registration with update detection
+- Enhanced scroll animations for better user experience
+- Improved page load performance through resource hints
+
+---
+
 ## [1.1.1] - 2026-01-08
 
 ### Fixed
