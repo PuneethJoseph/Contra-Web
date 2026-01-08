@@ -1,6 +1,10 @@
 /* ============================================
    ConTrac Website - Liquid Glass Design
+   Modern 2026 CSS Features
    ============================================ */
+
+/* CSS @layer for better organization (2026) */
+@layer reset, base, components, utilities;
 
 /* CSS Variables */
 :root {
@@ -66,72 +70,83 @@
 }
 
 /* Reset & Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@layer reset {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 }
 
-/* Skip to main content link (Accessibility) */
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
-    z-index: 10000;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--color-primary);
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 0;
+@layer base {
+
+    /* Skip to main content link (Accessibility) */
+    .skip-link {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        z-index: 10000;
+        padding: var(--spacing-sm) var(--spacing-md);
+        background: var(--color-primary);
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 600;
+        border-radius: var(--radius-md);
+    }
+
+    .skip-link:focus {
+        top: 0;
+        position: fixed;
+    }
+
+    html {
+        scroll-behavior: auto;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+    }
+
+    * {
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        font-family: var(--font-family);
+        font-size: var(--font-size-base);
+        line-height: 1.7;
+        margin: 0;
+        color: var(--text-primary);
+        background: var(--bg-dark);
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Prevent text truncation */
+    h1, h2, h3, h4, h5, h6, p, li, span, a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+        width: 100%;
+        box-sizing: border-box;
+        
+        /* Container Query support (2026) */
+        container-type: inline-size;
+        container-name: main-container;
+    }
 }
 
-.skip-link:focus {
-    top: 0;
-    position: fixed;
-}
-
-html {
-    scroll-behavior: auto;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
-}
-
-* {
-    -webkit-tap-highlight-color: transparent;
-}
-
-body {
-    font-family: var(--font-family);
-    font-size: var(--font-size-base);
-    line-height: 1.7;
-    margin: 0;
-    color: var(--text-primary);
-    background: var(--bg-dark);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    -webkit-overflow-scrolling: touch;
-}
-
-/* Prevent text truncation */
-h1, h2, h3, h4, h5, h6, p, li, span, a {
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
-    width: 100%;
-    box-sizing: border-box;
-}
+@layer components {
 
 /* ============================================
    Navigation
@@ -222,7 +237,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 0;
+    border-radius: var(--radius-md);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -271,9 +286,10 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
 
 .gradient-orb {
     position: absolute;
-    border-radius: 0;
+    border-radius: 50%;
     filter: blur(80px);
     opacity: 0.5;
+    will-change: transform;
 }
 
 .orb-1 {
@@ -321,7 +337,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     padding: var(--spacing-xs) var(--spacing-sm);
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
-    border-radius: 0;
+    border-radius: var(--radius-full);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     margin-bottom: var(--spacing-md);
@@ -400,7 +416,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     font-size: var(--font-size-base);
     font-weight: 600;
     text-decoration: none;
-    border-radius: 0;
+    border-radius: var(--radius-md);
     cursor: pointer;
     border: none;
     position: relative;
@@ -489,12 +505,17 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
 .glass-card {
     background: var(--glass-bg);
     border: 1px solid var(--color-gold-border);
-    border-radius: 0;
+    border-radius: var(--radius-lg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     box-shadow: var(--glass-shadow);
     position: relative;
-    overflow: visible;
+    overflow: hidden;
+}
+
+/* Ensure cards with existing padding don't get double padding */
+.glass-card:not(.feature-card):not(.privacy-feature):not(.budget-feature):not(.saving-feature):not(.saving-stat):not(.stat-card):not(.platform-card):not(.app-preview):not(.download-content):not(.privacy-commitment):not(.saving-example):not(.story-stats) {
+    padding: var(--spacing-md);
 }
 
 .glass-card::before {
@@ -545,7 +566,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
 .app-dots span {
     width: 8px;
     height: 8px;
-    border-radius: 0;
+    border-radius: var(--radius-full);
     background: var(--text-tertiary);
 }
 
@@ -566,7 +587,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     gap: var(--spacing-sm);
     padding: var(--spacing-sm);
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 0;
+    border-radius: var(--radius-md);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -578,7 +599,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     align-items: center;
     justify-content: center;
     background: var(--glass-bg);
-    border-radius: 0;
+    border-radius: var(--radius-md);
 }
 
 .preview-text {
@@ -628,28 +649,47 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    align-items: stretch; /* Make all cards same height */
 }
 
 .feature-card {
-    padding: var(--spacing-xl);
+    padding: var(--spacing-lg);
     text-align: left;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0 !important;
     border: 1px solid var(--color-gold-border);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.03) 100%);
+    border-radius: var(--radius-lg);
+    overflow: visible;
+    box-sizing: border-box;
+    height: 100%; /* Fill grid cell height */
+    position: relative; /* Establish positioning context */
+}
+
+.feature-card * {
+    text-align: left;
+}
+
+.feature-card .feature-title,
+.feature-card h3 {
+    text-align: left;
 }
 
 .feature-icon {
     width: 56px;
     height: 56px;
-    margin-bottom: 0;
+    margin: 0 0 2.5rem 0 !important; /* Force 40px spacing below icon */
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(135deg, rgba(0, 122, 255, 0.2) 0%, rgba(88, 86, 214, 0.2) 100%);
     border: 1px solid rgba(0, 122, 255, 0.3);
+    border-radius: var(--radius-md);
     flex-shrink: 0;
+    align-self: flex-start;
+    position: relative; /* Ensure it stays in normal flow */
+    z-index: 1; /* Keep icon behind text */
 }
 
 .feature-icon svg {
@@ -657,14 +697,19 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     height: 28px;
     stroke: var(--color-primary-light);
     stroke-width: 2;
+    display: block;
 }
 
 .feature-title {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    margin-bottom: var(--spacing-xs);
+    margin: 0 0 var(--spacing-xs) 0 !important;
+    padding: 0 !important;
     color: var(--text-primary);
     line-height: 1.3;
+    display: block;
+    position: relative; /* Ensure it stays in normal flow */
+    z-index: 2; /* Keep title above icon */
 }
 
 .feature-description {
@@ -672,6 +717,15 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     line-height: 1.7;
     font-size: var(--font-size-base);
     margin: 0;
+    margin-top: 0;
+    padding: 0;
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    display: block;
+    clear: both;
 }
 
 /* ============================================
@@ -758,7 +812,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     color: var(--text-tertiary);
     padding: var(--spacing-xs) var(--spacing-sm);
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 0;
+    border-radius: var(--radius-md);
     display: inline-block;
 }
 
@@ -946,6 +1000,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    align-items: stretch; /* Make all cards same height */
 }
 
 .privacy-feature {
@@ -953,6 +1008,24 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100%; /* Fill grid cell height */
+    text-align: left;
+}
+
+.privacy-feature * {
+    text-align: left;
+}
+
+.privacy-feature p,
+.privacy-feature .feature-description {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .privacy-commitment {
@@ -1007,6 +1080,9 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-sizing: border-box;
 }
 
 .stat-icon {
@@ -1019,6 +1095,33 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+    align-items: stretch; /* Make all cards same height */
+}
+
+.saving-feature {
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    height: 100%; /* Fill grid cell height */
+    min-height: 200px; /* Minimum height for consistency */
+    text-align: left;
+}
+
+.saving-feature * {
+    text-align: left;
+}
+
+.saving-feature p,
+.saving-feature .feature-description {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 .saving-example {
@@ -1046,7 +1149,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     align-items: center;
     padding: var(--spacing-md);
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 0;
+    border-radius: var(--radius-md);
     margin: var(--spacing-md) 0;
 }
 
@@ -1078,6 +1181,7 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-md);
+    align-items: stretch; /* Make all cards same height */
 }
 
 .budget-feature {
@@ -1085,6 +1189,24 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 100%; /* Fill grid cell height */
+    text-align: left;
+}
+
+.budget-feature * {
+    text-align: left;
+}
+
+.budget-feature p,
+.budget-feature .feature-description {
+    text-align: justify;
+    text-align-last: left;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
 }
 
 /* ============================================
@@ -1513,14 +1635,537 @@ h1, h2, h3, h4, h5, h6, p, li, span, a {
 }
 
 /* ============================================
-   Animations
+   Modern 2026 Features
    ============================================ */
 
+/* Container Queries (2026) - Component-based responsiveness */
+@container main-container (max-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* :has() Selector (2026) - Parent selector */
+.navbar:has(.nav-links.active) {
+    background: rgba(0, 0, 0, 0.95);
+}
+
+.feature-card:has(.feature-icon:hover) {
+    transform: translateY(-4px);
+    box-shadow: var(--glass-shadow-hover);
+}
+
+.glass-card:has(.btn:hover) {
+    border-color: var(--color-primary-light);
+}
+
+/* Native CSS Nesting (2026) - Enhanced feature card interactions */
+.feature-card {
+    transition: all var(--transition-base);
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.feature-card .feature-icon {
+    transition: transform var(--transition-base);
+}
+
+/* color-mix() for dynamic colors (2026) */
+.btn-primary {
+    background: var(--color-primary);
+    border-color: color-mix(in srgb, var(--color-primary) 80%, white);
+}
+
+.btn-primary:hover {
+    background: color-mix(in srgb, var(--color-primary) 90%, white);
+}
+
+/* aspect-ratio for media (2026) */
+.app-preview {
+    aspect-ratio: 9 / 16;
+    max-width: 400px;
+}
+
+/* View Transitions API Support (2026) */
+@view-transition {
+    navigation: auto;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    animation-duration: 0.3s;
+}
+
+/* Scroll-triggered animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Animation classes for scroll-triggered animations */
+.animate-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-on-scroll.fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-on-scroll.scale-in {
+    animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.animate-on-scroll:nth-child(1) { animation-delay: 0.1s; }
+.animate-on-scroll:nth-child(2) { animation-delay: 0.2s; }
+.animate-on-scroll:nth-child(3) { animation-delay: 0.3s; }
+.animate-on-scroll:nth-child(4) { animation-delay: 0.4s; }
+.animate-on-scroll:nth-child(5) { animation-delay: 0.5s; }
+.animate-on-scroll:nth-child(6) { animation-delay: 0.6s; }
+
+/* Floating orb animations */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        transform: translate(30px, -30px) scale(1.1);
+    }
+    66% {
+        transform: translate(-20px, 20px) scale(0.9);
+    }
+}
+
+.gradient-orb {
+    animation: float 20s ease-in-out infinite;
+}
+
+.orb-1 {
+    animation-duration: 25s;
+    animation-delay: 0s;
+}
+
+.orb-2 {
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+.orb-3 {
+    animation-duration: 35s;
+    animation-delay: -10s;
+}
+
+/* ============================================
+   Animations
+   ============================================ */
 
 /* Smooth scroll behavior */
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;
     }
+    
+    /* Enable animations only if user prefers motion */
+    .animate-on-scroll {
+        animation-play-state: running;
+    }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .animate-on-scroll {
+        opacity: 1;
+        animation: none;
+    }
+    
+    .gradient-orb {
+        animation: none;
+    }
+}
+
+/* ============================================
+   Advanced 2026 CSS Features
+   ============================================ */
+
+/* CSS :is() and :where() for better selector performance (2026) */
+.nav-link:is(:hover, :focus),
+.btn:is(:hover, :focus) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+}
+
+/* Use :where() to reduce specificity */
+:where(.feature-card, .privacy-feature, .budget-feature, .saving-feature) {
+    will-change: transform;
+}
+
+/* CSS :focus-visible for better keyboard navigation (2026) */
+:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+}
+
+/* Remove focus outline for mouse users */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* CSS Math Functions (2026) */
+.hero-title {
+    font-size: clamp(var(--font-size-3xl), 5vw + 1rem, var(--font-size-6xl));
+}
+
+.section-title {
+    font-size: clamp(var(--font-size-2xl), 3vw + 1rem, var(--font-size-4xl));
+}
+
+.container {
+    padding-inline: clamp(var(--spacing-sm), 4vw, var(--spacing-md));
+}
+
+/* CSS Logical Properties for better internationalization (2026) */
+/* Note: .feature-card main definition is at line 655 - this rule removed to prevent overriding gap property */
+
+.btn {
+    padding-block: var(--spacing-xs);
+    padding-inline: var(--spacing-md);
+}
+
+/* CSS Scroll Snap (2026) */
+@media (min-width: 768px) {
+    .features-grid,
+    .saving-features,
+    .privacy-features,
+    .budget-features-grid {
+        scroll-snap-type: x proximity;
+    }
+    
+    .feature-card,
+    .saving-feature,
+    .privacy-feature,
+    .budget-feature {
+        scroll-snap-align: start;
+    }
+}
+
+/* CSS Scroll-driven Animations (2026) - Experimental but cutting-edge */
+@supports (animation-timeline: scroll()) {
+    @scroll-timeline scroll-timeline {
+        source: selector(body);
+        orientation: vertical;
+        scroll-offsets: 0%, 100%;
+    }
+    
+    .hero-visual {
+        animation: fadeInUp 1s ease-out;
+        animation-timeline: scroll();
+        animation-range: entry 0% entry 50%;
+    }
+}
+
+/* CSS @supports for progressive enhancement (2026) */
+@supports (backdrop-filter: blur(20px)) {
+    .navbar {
+        backdrop-filter: blur(20px) saturate(180%);
+    }
+}
+
+@supports not (backdrop-filter: blur(20px)) {
+    .navbar {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+
+/* CSS clip-path for advanced visual effects (2026) */
+@supports (clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%)) {
+    .hero-badge::before {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    }
+}
+
+/* CSS mask-image for advanced effects (2026) */
+@supports (mask-image: linear-gradient(black, transparent)) {
+    .gradient-orb {
+        mask-image: radial-gradient(circle, black 60%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle, black 60%, transparent 100%);
+    }
+}
+
+/* CSS conic-gradient for modern gradients (2026) */
+@supports (background: conic-gradient(from 0deg, red, blue)) {
+    .hero-badge {
+        background: conic-gradient(from 0deg, var(--color-primary), var(--color-secondary), var(--color-accent), var(--color-primary));
+        background-size: 200% 200%;
+        animation: gradient-rotate 3s linear infinite;
+    }
+}
+
+@keyframes gradient-rotate {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+/* Dark mode support (2026) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-primary: #ffffff;
+        --text-secondary: rgba(255, 255, 255, 0.8);
+        --text-tertiary: rgba(255, 255, 255, 0.6);
+    }
+}
+
+/* High contrast mode support (2026) */
+@media (prefers-contrast: high) {
+    :root {
+        --glass-border: rgba(255, 255, 255, 0.5);
+        --text-secondary: rgba(255, 255, 255, 0.95);
+    }
+    
+    .btn {
+        border-width: 2px;
+    }
+}
+
+/* Reduced data mode (2026) */
+@media (prefers-reduced-data: reduce) {
+    .gradient-orb {
+        display: none;
+    }
+    
+    .hero-visual {
+        background-image: none;
+    }
+}
+
+/* Pointer device detection (2026) */
+@media (pointer: coarse) {
+    .btn,
+    .nav-link {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+@media (pointer: fine) {
+    .feature-card:hover {
+        transform: translateY(-4px);
+    }
+}
+
+/* Hover capability detection (2026) */
+@media (hover: none) {
+    .feature-card:hover {
+        transform: none;
+    }
+}
+
+/* Display mode for PWA (2026) */
+@media (display-mode: standalone) {
+    .navbar {
+        padding-top: env(safe-area-inset-top);
+    }
+}
+
+/* CSS Trigonometric Functions (2026) - For advanced animations */
+@supports (top: sin(45deg)) {
+    .orb-1 {
+        --angle: 0deg;
+        transform: translate(
+            calc(sin(var(--angle)) * 50px),
+            calc(cos(var(--angle)) * 50px)
+        );
+        animation: orb-rotate 20s linear infinite;
+    }
+}
+
+@keyframes orb-rotate {
+    from { --angle: 0deg; }
+    to { --angle: 360deg; }
+}
+
+/* CSS Subgrid (2026) - For complex layouts */
+@supports (grid-template-rows: subgrid) {
+    .feature-card {
+        display: grid;
+        grid-template-rows: subgrid;
+    }
+}
+
+/* CSS :popover and :modal (2026) - Future native popovers */
+@supports selector(:popover-open) {
+    [popover] {
+        border: 1px solid var(--glass-border);
+        background: var(--glass-bg);
+        backdrop-filter: blur(20px);
+        border-radius: var(--radius-lg);
+        padding: var(--spacing-md);
+    }
+    
+    [popover]:popover-open {
+        animation: scaleIn 0.3s ease-out;
+    }
+}
+
+/* CSS Anchor Positioning (2026) - For tooltips */
+@supports (position-anchor: --anchor) {
+    .tooltip {
+        position-anchor: --anchor;
+        position: absolute;
+        top: anchor(bottom);
+        left: anchor(center);
+    }
+}
+
+/* Enhanced container queries with named containers (2026) */
+@container main-container (min-width: 768px) {
+    .hero .container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@container main-container (min-width: 1024px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* CSS Color Functions - Advanced color manipulation (2026) */
+@supports (color: oklch(0.5 0.2 250)) {
+    :root {
+        --color-primary-oklch: oklch(0.6 0.2 250);
+        --color-primary-light-oklch: oklch(0.7 0.15 250);
+    }
+}
+
+/* CSS @media (dynamic-range) for HDR support (2026) */
+@media (dynamic-range: high) {
+    .hero-visual {
+        color-gamut: p3;
+    }
+}
+
+/* CSS @media (color-gamut) for wide color (2026) */
+@media (color-gamut: p3) {
+    :root {
+        --color-primary: color(display-p3 0 0.478 1);
+    }
+}
+
+/* CSS @media (forced-colors) for Windows High Contrast (2026) */
+@media (forced-colors: active) {
+    .glass-card {
+        border: 1px solid ButtonText;
+        background: ButtonFace;
+    }
+    
+    .btn {
+        border: 2px solid ButtonText;
+        background: ButtonFace;
+        color: ButtonText;
+    }
+}
+
+/* CSS @media (inverted-colors) (2026) */
+@media (inverted-colors: inverted) {
+    .hero-visual {
+        filter: invert(1);
+    }
+}
+
+/* CSS @media (monochrome) (2026) */
+@media (monochrome) {
+    .gradient-orb {
+        display: none;
+    }
+}
+
+/* CSS @media (update) for refresh rate (2026) */
+@media (update: fast) {
+    .feature-card {
+        will-change: transform;
+    }
+}
+
+/* CSS @media (overflow-block) and (overflow-inline) (2026) */
+@media (overflow-block: scroll) {
+    body {
+        scrollbar-width: thin;
+    }
+}
+
+/* Enhanced :has() usage (2026) */
+.section:has(.feature-card:hover) .feature-card:not(:hover) {
+    opacity: 0.7;
+}
+
+.navbar:has(.nav-links.active) .nav-toggle {
+    transform: rotate(90deg);
+}
+
+/* CSS Cascade Layers - Enhanced organization (2026) */
+@layer utilities {
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+    
+    .text-balance {
+        text-wrap: balance;
+    }
+    
+    .text-pretty {
+        text-wrap: pretty;
+    }
+}

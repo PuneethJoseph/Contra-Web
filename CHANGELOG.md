@@ -2,6 +2,21 @@
 
 All notable changes to the ConTrac website will be documented in this file.
 
+## [1.1.1] - 2026-01-08
+
+### Fixed
+- **Critical:** Fixed icon-title overlap issue in feature cards
+  - Added explicit margin-bottom (2.5rem) to `.feature-icon` with `!important` flag
+  - Added z-index layering (icon: z-index 1, title: z-index 2) to prevent visual overlap
+  - Added `position: relative` to ensure proper stacking context
+  - Fixed flexbox layout with `!important` flags to prevent rule conflicts
+  - Reduced title line-height to 1.3 to prevent upward text extension
+
+### Changed
+- Moved `VERIFICATION_CHECKLIST.md` to `temp-docs/` folder for better organization
+
+---
+
 ## [1.1.0] - 2026-01-07
 
 ### Added
