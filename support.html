@@ -182,7 +182,22 @@
         <div class="faq-item">
             <div class="faq-question">Is my data secure?</div>
             <div class="faq-answer">
-                Yes! ConTrac is designed with privacy as a core principle. All your data is stored locally on your device with AES-256-GCM encryption. Your data never leaves your device unless you explicitly enable iCloud sync. We don't collect, track, or share any of your information.
+                Yes! ConTrac is designed with privacy as a core principle. Your subscription and budget data is stored locally on your device with AES-256-GCM encryption. By default, this data never leaves your device unless you explicitly enable iCloud sync.
+                <br><br>
+                If you choose to use backend authentication (for example: email verification or password reset), we store only minimal account/authentication data (such as email, optional name, password hash, and limited security logs). We do not sell your data and we do not use it for advertising or tracking.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What data is collected?</div>
+            <div class="faq-answer">
+                It depends on how you use the app:
+                <ul style="margin-top: var(--spacing-xs);">
+                    <li><strong>Without an account:</strong> Nothing is collected. All your subscriptions, budgets, and settings stay on your device.</li>
+                    <li><strong>With an account (optional):</strong> We store only what's needed for authentication — your <a href="privacy.html#:~:text=Account%20%26%20Authentication%20Data" style="color: var(--color-primary-light);">email, optional name, password hash, and limited security logs</a>.</li>
+                    <li><strong>With iCloud sync (optional):</strong> Your data is stored in your personal iCloud account, managed by Apple.</li>
+                </ul>
+                We never collect advertising identifiers, usage analytics, or location data. For full details, see our <a href="privacy.html" style="color: var(--color-primary-light);">Privacy Policy</a>.
             </div>
         </div>
 
@@ -192,10 +207,11 @@
                 ConTrac requires authentication to protect your subscription data. You can authenticate using:
                 <ul style="margin-top: var(--spacing-xs);">
                     <li><strong>Sign in with Apple:</strong> Quick and secure authentication using your Apple ID</li>
+                    <li><strong>Email &amp; Password:</strong> Optional account sign-in for users who prefer email authentication (includes email verification)</li>
                     <li><strong>Face ID or Touch ID:</strong> Biometric authentication for quick access (if available on your device)</li>
                     <li><strong>Demo Account:</strong> For testing purposes (development builds only)</li>
                 </ul>
-                Once authenticated, all your data is stored locally on your device. No cloud account or external service is required for core functionality. Optional iCloud sync is available if you want to sync across devices.
+                Once authenticated, your subscription and budget data is stored locally on your device. Optional iCloud sync is available if you want to sync across devices.
             </div>
         </div>
 
@@ -209,7 +225,7 @@
         <div class="faq-item">
             <div class="faq-question">Does ConTrac work offline?</div>
             <div class="faq-answer">
-                Yes! ConTrac works completely offline. All core features work without an internet connection. The only feature that requires internet is optional iCloud sync (if enabled).
+                Yes! ConTrac works offline for all core features (view/edit subscriptions, budgets, analytics). Internet may be required for account-related actions like email verification, password reset, or optional iCloud sync (if enabled).
             </div>
         </div>
 
@@ -260,7 +276,7 @@
         <h3>App Won't Launch</h3>
         <ul>
             <li><strong>Restart your device:</strong> Sometimes a simple restart resolves launch issues.</li>
-            <li><strong>Check system requirements:</strong> Ensure your device meets the iOS 26 requirement. (macOS version coming soon)</li>
+            <li><strong>Check system requirements:</strong> Ensure your device meets the minimum iOS/macOS version requirements.</li>
             <li><strong>Reinstall the app:</strong> If the problem persists, try deleting and reinstalling the app (make sure to export your data first if you have important information).</li>
         </ul>
 
@@ -296,7 +312,7 @@
 
         <h3>Quick Start Guide</h3>
         <ol>
-            <li><strong>Download and Install:</strong> Download ConTrac for iOS from the App Store and install it on your iPhone or iPad (iOS 26 required). macOS version coming soon.</li>
+            <li><strong>Download and Install:</strong> Download ConTrac from the App Store and install it on your device.</li>
             <li><strong>Add Your First Subscription:</strong> Tap the "+" button to add a subscription manually, or use the import feature to add from documents.</li>
             <li><strong>Set Up Categories:</strong> Organize your subscriptions by category (Streaming, Productivity, Fitness, etc.).</li>
             <li><strong>Configure Notifications:</strong> Set up renewal reminders so you never miss a subscription renewal.</li>
@@ -347,7 +363,7 @@
                 <strong>When Reporting Issues</strong>
                 <p style="margin-top: var(--spacing-xs);">Please include the following information:</p>
                 <ul>
-                    <li>Device model and iOS version (iOS 26 required)</li>
+                    <li>Device model and iOS/macOS version</li>
                     <li>ConTrac app version (found in About section)</li>
                     <li>Detailed description of the issue</li>
                     <li>Steps to reproduce the problem</li>

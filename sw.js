@@ -1,9 +1,9 @@
 // ConTrac Website - Service Worker for PWA (2026)
 // Enables offline functionality and faster loading
 
-const CACHE_NAME = 'contra-v1.1.0';
-const STATIC_CACHE = 'contra-static-v1.1.0';
-const DYNAMIC_CACHE = 'contra-dynamic-v1.1.0';
+const CACHE_NAME = 'contra-v1.1.1';
+const STATIC_CACHE = 'contra-static-v1.1.1';
+const DYNAMIC_CACHE = 'contra-dynamic-v1.1.1';
 
 // Assets to cache immediately
 const STATIC_ASSETS = [
